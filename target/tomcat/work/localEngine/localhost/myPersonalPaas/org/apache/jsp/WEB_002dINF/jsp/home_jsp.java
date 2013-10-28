@@ -1,10 +1,10 @@
-package org.apache.jsp;
+package org.apache.jsp.WEB_002dINF.jsp;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 
-public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class home_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -40,7 +40,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
 
 
     try {
-      response.setContentType("text/html");
+      response.setContentType("text/html; charset=US-ASCII");
       pageContext = _jspxFactory.getPageContext(this, request, response,
       			null, true, 8192, true);
       _jspx_page_context = pageContext;
@@ -50,22 +50,33 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out = pageContext.getOut();
       _jspx_out = out;
 
-      out.write("<html>\n");
-      out.write("<body>\n");
-      out.write("<h2>Welcome to My Personal Paas</h2>\n");
-      out.write("It is your personal Paas, where you just run this service on your machine and then this \n");
-      out.write("server will talk to EC2 or locally installed VM and configure your dev enviroment with app-server/database etc.\n");
-      out.write("So you do not need to handle the hassles of interacting with EC2 or VM complexities!\n");
       out.write("\n");
-      out.write("<script>\n");
-      out.write("function openHomePage(){\n");
-      out.write("\twindow.open(\"/myPersonalPaas/home\");\n");
-      out.write("}\n");
-      out.write("</script>\n");
+      out.write("<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\n");
+      out.write("<html>\n");
+      out.write("<head>\n");
+      out.write("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=US-ASCII\">\n");
+      out.write("<title>Home Page</title>\n");
+      out.write("</head>\n");
+      out.write("<body>\n");
+      out.write("Provision your Dev Environment here:\n");
+      out.write("\n");
       out.write("<br>\n");
-      out.write("<input type=\"button\" name=\"start\" value=\"begin\" onclick=\"javascript:openHomePage()\">\n");
+      out.write("Select you server\n");
+      out.write("<select>\n");
+      out.write("<option value=\"Tomcat5.0\">Tomcat 5.0</option>\n");
+      out.write("<option value=\"Tomcat6.0\">Tomcat 6.0</option>\n");
+      out.write("<option value=\"Tomcat7.0\">Tomcat 7.0</option>\n");
+      out.write("</select>\n");
+      out.write("Select your Database\n");
+      out.write("<select>\n");
+      out.write("<option value=\"mySQL5\">MySQL 5.0</option>\n");
+      out.write("<option value=\"MongoDB\">MongoDB</option>\n");
+      out.write("<option value=\"Postgres\">Postgres</option>\n");
+      out.write("</select>\n");
+      out.write("<br>\n");
+      out.write("<button name=\"value\" >Next</button>\n");
       out.write("</body>\n");
-      out.write("</html>\n");
+      out.write("</html>");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;
